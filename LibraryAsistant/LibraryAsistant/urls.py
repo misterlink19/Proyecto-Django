@@ -19,8 +19,10 @@ from django.conf import settings
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.views.generic import RedirectView
+from Libreria import views
 
 urlpatterns = [
+    path('index/', views.IndexView.as_view(), name='index'),
     path('admin/', admin.site.urls),
     path('Libreria/', include('Libreria.urls')),
     path('', RedirectView.as_view(url='/Libreria/', permanent=True)),
