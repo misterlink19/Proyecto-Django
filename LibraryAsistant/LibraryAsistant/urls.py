@@ -23,6 +23,10 @@ from Libreria import views
 
 urlpatterns = [
     path('index/', views.IndexView.as_view(), name='index'),
+<<<<<<< HEAD
+=======
+    path('ConsultaDeLibros/', views.CLibrosView.as_view(), name='CLibros'),
+>>>>>>> 8d9d8ac94f1bd17e37a94d6417fad419d53ec7de
     path('admin/', admin.site.urls),
     path('Libreria/', include('Libreria.urls')),
     path('', RedirectView.as_view(url='/Libreria/', permanent=True)),
