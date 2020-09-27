@@ -68,15 +68,9 @@
             </nav>
         </header>
 
-        {% if libros %}
-        <ul>
-            {% for Libro in libros %}
-                <li>{{ Libro.titulo }}</li>
-            {% endfor %}
-        </ul>
-        {% else %}
-            <p>No hay libros que mostrar</p>
-        {% endif %}
+        {% for Libro in Libros}
+            <p>{{Libreria_libro}}</p>
+        {% endfor %}
           
         <!-- FOOTER -->
         <footer class="container">

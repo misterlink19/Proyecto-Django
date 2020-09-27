@@ -13,18 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path
-from django.urls import include
-from django.conf import settings
 from django.contrib import admin
-from django.conf.urls.static import static
-from django.views.generic import RedirectView
-from Libreria import views
+from django.urls import path
+from libreria import views
 
 urlpatterns = [
-    path('ConsultaDeLibros/', views.CLibrosView.as_view(), name='CLibros'),
-    path('index/', views.IndexView.as_view(), name='index'),
     path('admin/', admin.site.urls),
-    path('Libreria/', include('Libreria.urls')),
-    path('', RedirectView.as_view(url='/Libreria/', permanent=True)),
-]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('',views.IndexView.as_view(), name='index'),
+    
+]
