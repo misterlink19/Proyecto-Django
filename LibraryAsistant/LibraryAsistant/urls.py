@@ -24,4 +24,8 @@ urlpatterns = [
     path('libros/nuevo',views.LibroNuevo.as_view(), name='libros_crear'),
     path('libros<int:pk>/editar', views.LibroEditar.as_view(), name='libros_editar'),
     path('libros/<int:pk>/eliminar', views.LibroEliminar.as_view(), name='libros_eliminar'),
+    path('alquilers/',views.AlquilerIndex.as_view(), name='alquilers'),
+    path('alquilers/nuevo',views.AlquilerNuevo.as_view(), name='alquilers_crear'),
+    path('alquilers<int:pk>/editar', views.AlquilerEditar.as_view(), name='alquilers_editar'),
+    path('alquilers/<int:pk>/eliminar', views.AlquilerEliminar.as_view(), name='alquilers_eliminar'),
 ]

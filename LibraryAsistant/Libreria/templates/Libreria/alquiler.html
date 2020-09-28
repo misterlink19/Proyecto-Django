@@ -1,0 +1,49 @@
+{%extends 'libreria/layout.html'%} {%block titulo %} Alquiler - {% endblock %} {%block contenido %}
+<main role="main">
+    <div class="container">
+        <div class="row">
+            <div class="col my-4">
+                <div class="card">
+                    <div class="card-header">
+                        Library Asistance
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Alquiler</h5>
+                        <table class="table table-boardered mt-2">
+                            <thead>
+                                <tr>
+                                    <td>#</td>
+                                    <td>Lector</td>
+                                    <td>alquiler</td>
+                                    <td>Fecha de Alquiler</td>
+                                    <td>Fecha de Entrega</td>
+                                    <td>Precio</td>
+                                    <td>Editar</td>
+                                    <td>Eliminar</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for alquiler in alquilers %}
+                                <tr>
+                                    <td>{{ alquiler.id }}</td>
+                                    <td>{{ alquiler.lector }}</td>
+                                    <td>{{ alquiler.libro.titulo }}</td>
+                                    <td>{{ alquiler.fecha_Alquiler }}</td>
+                                    <td>{{ alquiler.fecha_Entrega }}</td>
+                                    <td>{{ alquiler.precio }}</td>
+                                    <td><a class="btn btn-warning btn-md" href="{% url 'alquilers_editar' alquiler.id %}">Editar</a></td>
+                                    <td><a class="btn btn-danger btn-md" href="{% url 'alquilers_eliminar' alquiler.id %}">Eliminar</a></td>
+                                </tr>
+                                {% endfor %}
+                                <a href="/" class="btn btn-primary btn-sm">VOLVER</a> &ThickSpace; | &ThickSpace;
+                                <a class="btn btn-success btn-sm" href="{% url 'alquilers_crear' %}" role="button">Nuevo alquiler</a> &NewLine;
+                                <br>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

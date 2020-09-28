@@ -29,3 +29,23 @@ class LibroEliminar(DeleteView):
      model = Libro
      fields = '__all__'
      success_url = '/libros'
+
+class AlquilerIndex(View):
+    def get(self, request):
+        context = {'alquilers': Alquiler.objects.all()}
+        return render(request,'libreria/alquiler.html',context)
+
+class AlquilerNuevo(CreateView):
+     model = Alquiler
+     fields = '__all__'
+     success_url = '/alquilers'
+
+class AlquilerEditar(UpdateView):
+     model = Alquiler
+     fields = '__all__'
+     success_url = '/alquilers'
+
+class AlquilerEliminar(DeleteView):
+     model = Alquiler
+     fields = '__all__'
+     success_url = '/alquilers'
