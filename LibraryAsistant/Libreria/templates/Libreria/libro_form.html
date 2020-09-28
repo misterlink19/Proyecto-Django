@@ -1,0 +1,17 @@
+{% extends 'libreria/layout.html' %} {% block titulo %} Creando - {% endblock %} {% block contenido %}
+<div class="container">
+    <div class="row">
+        <div class="col my-4">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <table>
+                    {{ form.as_table }}
+                </table>
+                <div class="my-4">
+                    <button type="submit" class="btn btn-primary">AGREGAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock%}

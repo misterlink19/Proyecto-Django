@@ -28,11 +28,11 @@ class Libro(models.Model):
         on_delete=models.CASCADE, 
         null = True)
     
-    genero_Id = models.ManyToManyField(
+    genero = models.ManyToManyField(
         'Genero',
         help_text = "Seleccione un genero para este libro")
    
-    editorial_Id = models.ForeignKey(
+    editorial = models.ForeignKey(
         'Editorial', 
         on_delete=models.CASCADE)
 

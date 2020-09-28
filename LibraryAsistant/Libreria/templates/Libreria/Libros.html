@@ -1,0 +1,57 @@
+{%extends 'libreria/layout.html'%} {%block titulo %} Libros - {% endblock %} {%block contenido %}
+
+
+<main role="main">
+    <div class="container">
+        <div class="row">
+            <div class="col my-4">
+                <div class="card">
+                    <div class="card-header">
+                        Library Asistance
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Libros</h5>
+                        <table class="table table-boardered mt-2">
+                            <thead>
+                                <tr>
+                                    <td>#</td>
+                                    <td>Titulo</td>
+                                    <td>autor</td>
+                                    <td>año</td>
+                                    <td>edicion</td>
+                                    <td>genero</td>
+                                    <td>status</td>
+                                    <td>Precio</td>
+                                    <td>Editar</td>
+                                    <td>Eliminar</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for libro in libros %}
+                                <tr>
+                                    <td>{{ libro.id }}</td>
+                                    <td>{{ libro.titulo }}</td>
+                                    <td>{{ libro.autor }}</td>
+                                    <td>{{ libro.año }}</td>
+                                    <td>{{ libro.edicion }}</td>
+                                    <td>{% for genero in libro.genero.all %} {{genero}},{% endfor %}</td>
+                                    <td>{{ libro.status }}</td>
+                                    <td>{{ libro.precio }}</td>
+                                    <td><a class="btn btn-warning btn-md" href="{% url 'libros_editar' libro.id %}">Editar</a></td>
+                                    <td><a class="btn btn-danger btn-md" href="{% url 'libros_eliminar' libro.id %}">Eliminar</a></td>
+                                </tr>
+                                {% endfor %}
+                                <a href="/" class="btn btn-primary btn-sm">VOLVER</a> &ThickSpace; | &ThickSpace;
+                                <a class="btn btn-success btn-sm" href="/libros/nuevo" role="button">Nuevo Libro</a> &NewLine;
+                                <br>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}
