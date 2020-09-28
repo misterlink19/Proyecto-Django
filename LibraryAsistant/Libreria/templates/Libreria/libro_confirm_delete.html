@@ -2,14 +2,15 @@
 <div class="container">
     <div class="row">
         <div class="col my-4">
-            <h1>¿Eliminar el libro {{libro}}?</h1>
+            <h1>¿Eliminar el libro {{libro.titulo}}?</h1>
             <form action="" method="POST">
                 {% csrf_token %}
                 <table>
                     {{ form.as_table }}
                 </table>
                 <div class="my-4">
-                    <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                    <button type="submit" class="btn btn-danger">ELIMINAR</button> &ThickSpace; | &ThickSpace;
+                    <a href="/libros" class="btn btn-primary btn-sm">VOLVER</a>
                 </div>
             </form>
         </div>

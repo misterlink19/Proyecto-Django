@@ -1,6 +1,4 @@
 {%extends 'libreria/layout.html'%} {%block titulo %} Libros - {% endblock %} {%block contenido %}
-
-
 <main role="main">
     <div class="container">
         <div class="row">
@@ -42,7 +40,7 @@
                                 </tr>
                                 {% endfor %}
                                 <a href="/" class="btn btn-primary btn-sm">VOLVER</a> &ThickSpace; | &ThickSpace;
-                                <a class="btn btn-success btn-sm" href="/libros/nuevo" role="button">Nuevo Libro</a> &NewLine;
+                                <a class="btn btn-success btn-sm" href="{% url 'libros_crear' %}" role="button">Nuevo Libro</a> &NewLine;
                                 <br>
                             </tbody>
                         </table>
