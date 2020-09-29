@@ -48,4 +48,25 @@ class AlquilerEditar(UpdateView):
 class AlquilerEliminar(DeleteView):
      model = Alquiler
      fields = '__all__'
-     success_url = '/alquilers'
+     success_url = '/lectors'
+
+
+class LectorIndex(View):
+    def get(self, request):
+        context = {'lectors': Lector.objects.all()}
+        return render(request,'libreria/lector.html',context)
+
+class LectorNuevo(CreateView):
+     model = Lector
+     fields = '__all__'
+     success_url = '/lectors'
+
+class LectorEditar(UpdateView):
+     model = Lector
+     fields = '__all__'
+     success_url = '/lectors'
+
+class LectorEliminar(DeleteView):
+     model = Lector
+     fields = '__all__'
+     success_url = '/lectors'

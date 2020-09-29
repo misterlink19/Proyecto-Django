@@ -1,0 +1,49 @@
+{%extends 'libreria/layout.html'%} {%block titulo %} Lector - {% endblock %} {%block contenido %}
+<main role="main">
+    <div class="container">
+        <div class="row">
+            <div class="col my-4">
+                <div class="card">
+                    <div class="card-header">
+                        Library Asistance
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Lectores</h5>
+                        <table class="table table-boardered mt-2">
+                            <thead>
+                                <tr>
+                                    <td>#</td>
+                                    <td>Nombre</td>
+                                    <td>Apellido</td>
+                                    <td>Telefono</td>
+                                    <td>Direccion</td>
+                                    <td>Correo</td>
+                                    <td>Editar</td>
+                                    <td>Eliminar</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for lector in lectors %}
+                                <tr>
+                                    <td>{{ lector.id }}</td>
+                                    <td>{{ lector.nombre }}</td>
+                                    <td>{{ lector.apellido }}</td>
+                                    <td>{{ lector.telefono }}</td>
+                                    <td>{{ lector.direccion }}</td>
+                                    <td>{{ lector.correo }}</td>
+                                    <td><a class="btn btn-warning btn-md" href="{% url 'lectors_editar' lector.id %}">Editar</a></td>
+                                    <td><a class="btn btn-danger btn-md" href="{% url 'lectors_eliminar' lector.id %}">Eliminar</a></td>
+                                </tr>
+                                {% endfor %}
+                                <a href="/" class="btn btn-primary btn-sm">VOLVER</a> &ThickSpace; | &ThickSpace;
+                                <a class="btn btn-success btn-sm" href="{% url 'lectors_crear' %}" role="button">Nuevo lector</a> &NewLine;
+                                <br>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

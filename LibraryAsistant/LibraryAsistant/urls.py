@@ -28,4 +28,8 @@ urlpatterns = [
     path('alquilers/nuevo',views.AlquilerNuevo.as_view(), name='alquilers_crear'),
     path('alquilers<int:pk>/editar', views.AlquilerEditar.as_view(), name='alquilers_editar'),
     path('alquilers/<int:pk>/eliminar', views.AlquilerEliminar.as_view(), name='alquilers_eliminar'),
+    path('lectors/',views.LectorIndex.as_view(), name='lectors'),
+    path('lectors/nuevo',views.LectorNuevo.as_view(), name='lectors_crear'),
+    path('lectors<int:pk>/editar', views.LectorEditar.as_view(), name='lectors_editar'),
+    path('lectors/<int:pk>/eliminar', views.LectorEliminar.as_view(), name='lectors_eliminar'),
 ]
